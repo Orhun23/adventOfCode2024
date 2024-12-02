@@ -21,9 +21,10 @@ for row in rows:
             
             modified_differences = [modified_report[j + 1] - modified_report[j] for j in range(len(modified_report) - 1)]
             
-            is_increasing = all(0 < diff <= 3 for diff in modified_differences)
+            is_increasing = all(0<diff<= 3 for diff in modified_differences)
             is_decreasing = all(-3 <= diff < 0 for diff in modified_differences)
-            
+
+
             if is_increasing or is_decreasing:
                 fixable_reports += 1
                 break
